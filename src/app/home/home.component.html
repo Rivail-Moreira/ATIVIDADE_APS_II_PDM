@@ -17,10 +17,10 @@
     <ng-container matColumnDef="acao">
         <th mat-header-cell *matHeaderCellDef>Ação</th>
         <td mat-cell *matCellDef="let element">             
-                <button mat-icon-button color="primary" >
+                <button mat-icon-button (click)="editElement(element)" color="primary" >
                    <mat-icon>edit</mat-icon>
-                   </button>
-                   <button mat-icon-button (click)="deletElement(element.matricula)" color="primary">
+                </button>
+                <button mat-icon-button (click)="deletElement(element.matricula)" color="primary">
                    <mat-icon>delete</mat-icon>
                 </button>            
         </td>

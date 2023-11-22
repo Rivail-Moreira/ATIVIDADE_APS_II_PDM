@@ -39,13 +39,22 @@ openDialog(element: PeriodicElement | null): void {
       matricula: null,
       nome: null,
       email: null,
-    }:element
+    }:{
+      matricula: element.matricula,
+      nome: element.nome,
+      email: element.email
+    }
   });
 
   dialogRef.afterClosed().subscribe(result => {
     if(result !== undefined) {
-      this.dataSource.push(result);
-      this.table.renderRows();
+      if(this.dataSource.map(p => p.matricula).includes(result.matricula)) {
+        this.dataSource[result.matricula -1] =result;
+        this.table.renderRows();
+      }else{
+        this.dataSource.push(result);
+        this.table.renderRows();
+      }
     }
   });
 }
@@ -58,6 +67,9 @@ openDialog(element: PeriodicElement | null): void {
 
   constructor(public dialog: MatDialog) {}
 
+  editElement(element: PeriodicElement): void {
+    this.openDialog(element);
+  }
   deletElement(position: number): void{
     this.dataSource = this.dataSource.filter(p => p.matricula !== position);
   }

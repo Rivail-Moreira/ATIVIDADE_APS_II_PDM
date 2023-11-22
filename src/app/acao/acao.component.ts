@@ -11,6 +11,7 @@ import { PeriodicElement } from '../home/home.component';
 })
 export class AcaoComponent implements OnInit {
   element!: PeriodicElement;
+  isChange!: boolean;
 
   constructor(
     
@@ -20,6 +21,11 @@ export class AcaoComponent implements OnInit {
        
   ) {}
 ngOnInit(): void {
+  if(this.data.matricula != null) {
+    this.isChange = true;
+  }else {
+    this.isChange = false;
+  }
 }
   onNoClick(): void {
     this.dialogRef.close();
