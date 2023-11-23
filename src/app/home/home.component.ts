@@ -18,7 +18,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {matricula: 7, nome: 'Maria', email: 'teste@gmail.com'},
   {matricula: 8, nome: 'Paula', email: 'teste@gmail.com'},
   {matricula: 9, nome: 'Fábio', email: 'teste@gmail.com'},
-  {matricula: 10, nome: 'Joaquim', email: 'teste@gmail.com'},
+  {matricula: 10, nome: 'Joaquim', email: 'teste@gmail.com'}, 
 ];
 
 @Component({

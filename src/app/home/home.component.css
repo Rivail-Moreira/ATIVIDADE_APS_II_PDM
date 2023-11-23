@@ -1,7 +1,9 @@
 table {
     width: 100%;
+    
   }
 
   .container{
-    padding: 10px 30px;
+    padding: 10px 30px 60px 30px;
+    
   }
